@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//bloglaravel.test --> welcome
+Route::view("/", "welcome");
+
+//bloglaravel.contact --> contact
+Route::view("contact", "contact");
+
+//bloglaravel.blog --> blog
+Route::view("blog", "blog");
+
+//bloglaravel.about --> about
+Route::view("about", "about");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
