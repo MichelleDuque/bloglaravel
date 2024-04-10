@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 //bloglaravel.test --> welcome
-Route::view("/", "welcome")->name("home");;
+Route::view("/", "welcome")->name("home");
 
 //bloglaravel.contact --> contact
 Route::view("contact", "contact")->name("contact");
 
 //bloglaravel.blog --> blog
-Route::view("blog", "blog")->name("blog");;
+//bloglaravel.blog --> blog
+Route::get("blog", [PostController::class, "index"])->name("blog");
+
 
 //bloglaravel.about --> about
 Route::view("about", "about")->name("about");;
